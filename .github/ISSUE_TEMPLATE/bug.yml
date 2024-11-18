@@ -1,0 +1,86 @@
+name: Bug report
+description: Create a report to help improve the repo!
+title: "[BUG]: "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this report! It helps us improve our free-to-use compose files and helps to keep everyone safe.
+
+  - type: input
+    id: title
+    attributes:
+      label: Bug Title
+      description: A short summary of the bug
+      placeholder: "Bug title"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A detailed description of the bug
+      placeholder: "Describe the bug in detail"
+
+  - type: input
+    id: service
+    attributes:
+      label: Service
+      description: Which service (docker compose folder) are you using from this repo?
+      placeholder: "Service name"
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: |
+        Steps to reproduce the issue:
+        1. Run 'docker-compose up'
+        2. Execute 'docker-compose exec <service> ...'
+        3. Observe the output
+        4. See error
+      placeholder: "List the steps to reproduce the issue"
+
+  - type: input
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What you expected to happen
+      placeholder: "Expected behavior"
+
+  - type: input
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What actually happened
+      placeholder: "Actual behavior"
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How severe is the bug?
+      options:
+        - Critical
+        - High
+        - Medium
+        - Low
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: |
+        Information about your environment:
+        - OS: [e.g. Windows, MacOS, Linux]
+        - Browser [e.g. chrome, safari]
+        - Version [e.g. 22]
+      placeholder: "Environment details"
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Add any other context about the problem here
+      placeholder: "Additional context"

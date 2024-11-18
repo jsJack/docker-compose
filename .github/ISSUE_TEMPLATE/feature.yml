@@ -1,0 +1,45 @@
+name: Feature Request
+description: Suggest a new feature for this project
+title: "[FEATURE]: "
+labels: ["feature"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a feature for this project! Please fill out the following details to help us understand your request.
+
+  - type: input
+    id: service_name
+    attributes:
+      label: Service Name
+      description: What is the name of the service?
+      placeholder: "e.g., MyService"
+
+  - type: textarea
+    id: service_description
+    attributes:
+      label: Service Description
+      description: What does/will the service do?
+      placeholder: "Describe the functionality of the service."
+
+  - type: input
+    id: service_link
+    attributes:
+      label: Service Link
+      description: Provide a link to the service so we can read up on it.
+      placeholder: "e.g., https://example.com"
+
+  - type: dropdown
+    id: service_type
+    attributes:
+      label: Service Type
+      description: What category does this service fall under?
+      options:
+        - Utilities
+        - Security
+        - App Hosting
+        - Database
+        - Monitoring
+        - Networking
+        - Other
