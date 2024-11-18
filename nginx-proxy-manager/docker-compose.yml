@@ -1,15 +1,18 @@
+# Configuration for Nginx Proxy Manager
+# MIT License (c) 2024 Jack Perry
+
 services:
+  # Nginx Proxy Manager
   app:
     container_name: "${APP_NAME:-app}-nginx-proxy-manager"
     image: 'jc21/nginx-proxy-manager:latest'
     restart: unless-stopped
     ports:
-      # These ports are in format <host-port>:<container-port>
       - "${HTTP_PORT:-80}:80" # Public HTTP Port
       - "${HTTPS_PORT:-443}:443" # Public HTTPS Port
       - "${ADMIN_PORT:-81}:81" # Admin Web Port
     environment:
-      # Mysql/Maria connection parameters:
+      # MariaDB connection parameters:
       DB_MYSQL_HOST: "${DB_MYSQL_HOST:-db}"
       DB_MYSQL_PORT: "${DB_MYSQL_PORT:-3306}"
       DB_MYSQL_USER: "${DB_MYSQL_USER:-npm}"
@@ -23,11 +26,13 @@ services:
     depends_on:
       - db
 
+  # MariaDB Instance
   db:
     container_name: "${DB_NAME:-db}-nginx-proxy-manager"
     image: 'jc21/mariadb-aria:latest'
     restart: unless-stopped
     environment:
+      # Fill out these details in .env!
       MYSQL_ROOT_PASSWORD: "${DB_MYSQL_PASSWORD:-npm}"
       MYSQL_DATABASE: "${DB_MYSQL_NAME:-npm}"
       MYSQL_USER: "${DB_MYSQL_USER:-npm}"
