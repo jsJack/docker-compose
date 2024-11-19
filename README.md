@@ -1,6 +1,6 @@
 # Docker-Compose Repository
 
-Welcome to my Docker-Compose repository! This repository contains a collection of Docker Compose files that I use to manage my personal infrastructure. You can use these files to set up and manage your own Docker containers with ease.\
+Welcome to my Docker-Compose repository! This repository contains a collection of Docker Compose files that I use to manage my personal infrastructure. You can use these files to set up and manage your own Docker containers with ease.
 
 Feel free to use them as starting points for Docker projects, or to quickly setup an app, like one I've used before. Don't feel like you need to credit me in any way to use them, but if you make a public article about them, I'd appreciate you linking them back to the [original repo](https://github.com/jsJack/docker-compose).
 
