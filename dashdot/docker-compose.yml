@@ -1,0 +1,9 @@
+services:
+  dash:
+    image: mauricenino/dashdot:latest
+    restart: unless-stopped
+    privileged: true # Required for Docker metrics
+    ports:
+      - '3001:3001'
+    volumes:
+      - /:/mnt/host:ro # Read only access to host (to see system info)
