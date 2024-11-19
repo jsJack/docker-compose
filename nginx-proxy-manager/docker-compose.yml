@@ -25,6 +25,9 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt
     depends_on:
       - db
+    networks:
+      nginx-proxy-manager:
+        ipv4_address: ${APP_IP:-172.19.0.2}
 
   # MariaDB Instance
   db:
@@ -40,3 +43,12 @@ services:
       MARIADB_AUTO_UPGRADE: '1'
     volumes:
       - ./mysql:/var/lib/mysql
+    networks:
+      nginx-proxy-manager:
+        ipv4_address: ${DB_IP:-172.19.0.3}
+
+networks:
+  nginx-proxy-manager:
+    ipam:
+      config:
+        - subnet: "${NETWORK_SUBNET:-172.19.0.0/16}"
