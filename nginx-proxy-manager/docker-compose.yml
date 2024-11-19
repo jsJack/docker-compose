@@ -22,7 +22,7 @@ services:
       DISABLE_IPV6: 'true'
     volumes:
       - ./data:/data
-      - ./letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt
     depends_on:
       - db
 
