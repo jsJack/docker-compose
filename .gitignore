@@ -1,0 +1,16 @@
+# Ignore everything
+*
+
+# Allow directories to be searched
+!*/
+
+# Allow specific files
+!.env.example
+!docker-compose.yml
+!.gitignore
+
+# Allow these files in all subdirectories
+!*/.env.example
+!*/docker-compose.yml
+
+# Specific rules for services:
